@@ -2,8 +2,19 @@ package kata3;
 
 public class Kata3 {
 
-    private static HistogramDisplay histo = new HistogramDisplay();
+    private static Histogram<String> histogram = new Histogram();
+    
     public static void main(String[] args) {
-        histo.execute();
+        histogram.increment("ulpgc.es");
+        histogram.increment("google.com");
+        histogram.increment("outlook.com");
+        histogram.increment("google.com");
+        histogram.increment("outlook.com");
+        histogram.increment("outlook.com");
+        histogram.increment("ulpgc.es");
+        histogram.increment("google.com");
+        histogram.increment("google.com");
+        
+        new HistogramDisplay(histogram).execute();
     }
 }
